@@ -4,11 +4,11 @@
     <link rel="stylesheet" href="tugas2.css" />
     <script src="jquery-3.6.3.min.js"></script>
     <script>
-      $(document).ready(function () {
-        $(".kotak").dblclick(function () {
+      $(document).ready(function () { // menunggu halaman selesai di-load
+        $(".kotak").dblclick(function () { // ketika tombol hide di dobel klik
           var randomColor =
-            "#" + Math.floor(Math.random() * 16777215).toString(16);
-          $(this).css("background-color", randomColor);
+            "#" + Math.floor(Math.random() * 16777215).toString(16); // membuat warna random dari kode heksadesimal
+          $(this).css("background-color", randomColor); // mengubah warna background menjadi warna random
         });
       });
     </script>

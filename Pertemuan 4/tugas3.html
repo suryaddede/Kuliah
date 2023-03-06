@@ -4,15 +4,15 @@
     <link rel="stylesheet" href="tugas3.css" />
     <script src="jquery-3.6.3.min.js"></script>
     <script>
-      $(document).ready(function() {
-        $(".fade-in").click(function() {
-          $(".kotak").fadeTo("slow", 1);
+      $(document).ready(function() { // menunggu halaman selesai di-load
+        $(".fade-in").click(function() { // menambahkan event click pada elemen dengan class "fade-in"
+          $(".kotak").fadeTo("slow", 1); // membuat elemen dengan class "kotak" muncul dengan efek fade-in
         });
-        $(".fade-out").click(function() {
-          $(".kotak").fadeOut("slow");
+        $(".fade-out").click(function() {  // menambahkan event click pada elemen dengan class "fade-out"
+          $(".kotak").fadeOut("slow"); // membuat elemen dengan class "kotak" menghilang dengan efek fade-out
         });
-        $(".fade-to").click(function() {
-          $(".kotak").fadeTo("slow", 0.3);
+        $(".fade-to").click(function() {  // menambahkan event click pada elemen dengan class "fade-to"
+          $(".kotak").fadeTo("slow", 0.3); // membuat elemen dengan class "kotak" memudar ke opasitas 0.3
         });
       });
     </script>
