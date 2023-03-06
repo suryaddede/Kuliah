@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="tugas3.css" />
+    <script src="jquery-3.6.3.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $(".fade-in").click(function() {
+          $(".kotak").fadeTo("slow", 1);
+        });
+        $(".fade-out").click(function() {
+          $(".kotak").fadeOut("slow");
+        });
+        $(".fade-to").click(function() {
+          $(".kotak").fadeTo("slow", 0.3);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="kotak"></div>
+    <div class="button">
+      <button class="fade-in">Fade in</button>
+      <button class="fade-out">Fade out</button>
+      <button class="fade-to">Fade to 0.3</button>
+    </div>
+  </body>
+</html>
