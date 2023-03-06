@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="tugas1.css" />
+    <script src="jquery-3.6.3.min.js"></script>
+    <script>
+      $(document).ready(function () { // menunggu halaman selesai di-load
+        $(".hide").click(function () { // ketika tombol hide diklik
+          $(this).parent().parent().find("img").hide("slow");
+          // cari elemen parent dari tombol hide, lalu cari lagi parent dari elemen tersebut, kemudian cari elemen img di dalamnya, dan sembunyikan dengan efek slow
+        });
+        $(".show").click(function () { // ketika tombol show diklik
+          $(this).parent().parent().find("img").show("slow");
+          // cari elemen parent dari tombol show, lalu cari lagi parent dari elemen tersebut, kemudian cari elemen img di dalamnya, dan tampilkan dengan efek slow
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div>
+      <img src="https://picsum.photos/200" /><br />
+      <div class="button">
+        <button class="hide">Hide</button>
+        <button class="show">Show</button><br />
+      </div>
+    </div>
+    <div>
+      <img src="https://picsum.photos/201" /><br />
+      <div class="button">
+        <button class="hide">Hide</button>
+        <button class="show">Show</button><br />
+      </div>
+    </div>
+    <div>
+      <img src="https://picsum.photos/202" /><br />
+      <div class="button">
+        <button class="hide">Hide</button>
+        <button class="show">Show</button><br />
+      </div>
+    </div>
+  </body>
+</html>
