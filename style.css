@@ -1,6 +1,7 @@
 body {
   background-color: #1c1c1c;
   color: #8892b0;
+  margin: 0;
 }
 
 header {
@@ -98,7 +99,7 @@ ul#social-media {
   height: 340px;
   bottom: 0;
   padding: 0;
-  margin: 0 0 0 33px;
+  margin: 0 0 0 41px;
 }
 
 ul#social-media::after {
@@ -142,8 +143,6 @@ ul#social-media li#line {
   right: 45px;
   height: 340px;
   width: 40px;
-  background-color: #1c1c1c;
-  backdrop-filter: blur(10px);
 }
 
 #email::after {
@@ -158,6 +157,7 @@ ul#social-media li#line {
 #email a {
   color: #a8b2d1;
   font-family: "SF Mono", monospace;
+  font-weight: 300;
   font-size: 12px;
   letter-spacing: 1.2px;
   text-decoration: none;
@@ -169,4 +169,74 @@ ul#social-media li#line {
 #email a:hover {
   color: #ff8a00;
   transform: rotate(90deg) translate(-60px);
+}
+
+section#home {
+  height: 760px;
+  width: 1000px;
+  margin: auto;
+  transform: translate(-2px);
+  display: flex;
+  flex-direction: column;
+}
+
+section#home h1 {
+  margin: 171px 0 30px 4px;
+  font-family: "SF Mono", monospace;
+  font-weight: 300;
+  font-size: 16px;
+  color: #ff8a00;
+  line-height: 17.6px;
+  width: fit-content;
+  height: fit-content;
+}
+
+section#home h2 {
+  font-family: Calibre, Inter, "San Francisco";
+  font-size: 80px;
+  font-weight: 600;
+  line-height: 88px;
+  color: #ccd6f6;
+  width: fit-content;
+  height: fit-content;
+  margin: 0;
+}
+
+section#home h3 {
+  font-family: Calibre, Inter, "San Francisco";
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 72px;
+  width: fit-content;
+  height: fit-content;
+  margin: 5px 0 0 0;
+}
+
+section#home p {
+  font-family: Calibre, Inter, "San Francisco";
+  font-size: 20px;
+  line-height: 26px;
+  width: 650px;
+}
+
+section#home a {
+  font-family: "SF Mono", monospace;
+  font-size: 14px;
+  line-height: 14px;
+  text-decoration: none;
+  color: #ff8a00;
+  height: fit-content;
+  width: fit-content;
+  border: 1px solid #ff8a00;
+  margin: 32px 0 0 0;
+  padding: 20px 28px;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s
+}
+
+section#home a:hover {
+  background-color: rgba(255, 138, 0, 10%);
 }
