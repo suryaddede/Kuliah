@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="tugas3.css" />
+    <script src="jquery-3.6.3.min.js"></script>
+    <script>
+      $(document).ready(function() { // menunggu halaman selesai di-load
+        $(".fade-in").click(function() { // menambahkan event click pada elemen dengan class "fade-in"
+          $(".kotak").fadeTo("slow", 1); // membuat elemen dengan class "kotak" muncul dengan efek fade-in
+        });
+        $(".fade-out").click(function() {  // menambahkan event click pada elemen dengan class "fade-out"
+          $(".kotak").fadeOut("slow"); // membuat elemen dengan class "kotak" menghilang dengan efek fade-out
+        });
+        $(".fade-to").click(function() {  // menambahkan event click pada elemen dengan class "fade-to"
+          $(".kotak").fadeTo("slow", 0.3); // membuat elemen dengan class "kotak" memudar ke opasitas 0.3
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="kotak"></div>
+    <div class="button">
+      <button class="fade-in">Fade in</button>
+      <button class="fade-out">Fade out</button>
+      <button class="fade-to">Fade to 0.3</button>
+    </div>
+  </body>
+</html>
