@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Form Registrasi</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <style>
+      body {
+        background-color: #0a192f;
+      }
+      .container {
+        font-family: "SF Mono", monospace;
+        color: #8892b0;
+      }
+      h1 {
+        font-family: Calibre, Inter, "San Francisco";
+        color: #ccd6f6;
+      }
+      .btn-primary {
+        color: #ff8a00;
+        border: 1px solid #ff8a00;
+        background-color: rgba(0, 0, 0, 0%);
+        transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+      }
+      .btn-primary:hover {
+        color: #ff8a00;
+        border: 1px solid #ff8a00;
+        background-color: rgba(255, 138, 0, 10%);
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+        background-color: #0a192f;
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color: #495670;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="py-5 container">
+      <div class="order-md-1">
+        <h1 class="mb-3 text-center">Form Registrasi</h1>
+        <form action="" class="needs-validation" novalidate>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="namaDepan">Nama depan</label>
+              <input type="text" class="form-control" id="namaDepan" required />
+              <div class="invalid-feedback">Nama depan tidak valid.</div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="namaBelakang">Nama belakang</label>
+              <input
+                type="text"
+                class="form-control"
+                id="namaBelakang"
+                required
+              />
+              <div class="invalid-feedback">Nama belakang tidak valid.</div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="namaPengguna">Nama pengguna</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">@</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                id="namaPengguna"
+                required
+              />
+              <div class="invalid-feedback">Nama pengguna tidak valid.</div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="email">Email</label>
+            <input
+              type="text"
+              class="form-control"
+              id="email"
+              placeholder="xyz@gmail.com"
+              required
+            />
+            <div class="invalid-feedback">Email tidak valid.</div>
+          </div>
+          <div class="mb-3">
+            <label for="nomorTelepon">Nomor telepon</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">+62</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                id="nomorTelepon"
+                required
+              />
+              <div class="invalid-feedback">Nomor telepon tidak valid.</div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="alamat">Alamat</label>
+            <input
+              type="text"
+              class="form-control"
+              id="alamat"
+              placeholder="Jalan Raya 123"
+              required
+            />
+            <div class="invalid-feedback">Alamat tidak valid.</div>
+          </div>
+          <div class="row">
+            <div class="col-md-5 mb-3">
+              <label for="provinsi">Provinsi</label>
+              <select
+                class="custom-select d-block w-100"
+                id="provinsi"
+                required
+              >
+                <option value="">Pilih provinsi...</option>
+                <option>Jawa Timur</option>
+              </select>
+              <div class="invalid-feedback">Provinsi tidak valid.</div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="kota">Kota</label>
+              <select class="custom-select d-block w-100" id="kota" required>
+                <option value="">Pilih kota...</option>
+                <option>Surabaya</option>
+                <option>Sidoarjo</option>
+                <option>Gresik</option>
+              </select>
+              <div class="invalid-feedback">Kota tidak valid.</div>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="kodepos">Kode pos</label>
+              <input
+                type="text"
+                class="form-control"
+                id="kodepos"
+                placeholder="123456"
+                required
+              />
+              <div class="invalid-feedback">Kode pos tidak valid.</div>
+            </div>
+          </div>
+          <hr class="mb-4" />
+          <button class="btn btn-primary btn-block mb-3" type="submit">
+            Registrasi
+          </button>
+        </form>
+      </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/form-validation.js"></script>
+  </body>
+</html>
