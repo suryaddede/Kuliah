@@ -17,7 +17,7 @@ window.addEventListener("scroll", () => {
     nav.classList.add("scroll-up");
     nav.classList.remove("scroll-down");
     if (currentScrollPosition === 0) {
-      nav.style.backgroundColor = "rgba(10, 25, 47, 0.75)"
+      nav.style.backgroundColor = "rgba(10, 25, 47, 0.75)";
       nav.style.boxShadow = "none";
       nav.style.height = "100px";
       nav.style.backdropFilter = "none";
@@ -28,7 +28,6 @@ window.addEventListener("scroll", () => {
 });
 
 navbarToggler.addEventListener("click", () => {
-  navbarCollapse.style.backgroundColor = "rgba(10, 25, 47, 0.75)";
   nav.style.boxShadow = "0 10px 10px rgba(0, 0, 0, 0.15)";
   if (body.classList.contains("overflow-hidden")) {
     body.classList.remove("overflow-hidden");

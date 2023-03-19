@@ -49,11 +49,18 @@
         transform: rotate(360deg);
         background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgb(255, 138, 0)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M23 7L7 23M7 7l16 16'/%3e%3c/svg%3e");
       }
-      .navbar-dark .navbar-nav .nav-item {
-        background-color: rgba(0, 0, 0, 0);
-      }
       .navbar-dark .navbar-nav .nav-link:hover {
         color: #ffc107;
+      }
+      .btn-outline-success {
+        border-color: #ff8a00;
+        color: #ff8a00;
+      }
+
+      .btn-outline-success:hover {
+        background-color: rgba(255, 138, 0, 0.25);
+        border-color: #ff8a00;
+        color: #ff8a00;
       }
 
       .card {
@@ -62,9 +69,53 @@
       }
       .col-lg-2 .card {
         box-shadow: 0 0 30px rgba(0, 0, 0, 0.75);
+        overflow: hidden;
       }
       .col-lg-2 .card:hover {
         cursor: pointer;
+      }
+      .col-lg-2 .card img {
+        transition: transform 0.25s ease-in-out;
+      }
+      .col-lg-2 .card:hover img {
+        transform: scale(1.05);
+      }
+      .card-footer {
+        height: 100px;
+        z-index: 999;
+        display: flex;
+        border-top: 3px solid red;
+        justify-content: center;
+        align-items: flex-end;
+        background-image: linear-gradient(to bottom, white, red);
+        background-size: 100% 1000%;
+        color: #343a40;
+        transition: all 0.5s ease-in-out;
+      }
+      .card:hover .card-footer {
+        background-position: 0-15%;
+        color: white;
+      }
+      @media (max-width: 560px) {
+        .container-fluid {
+          font-size: xx-small;
+        }
+      }
+      @media (min-width: 768px) {
+        .card-footer {
+          height: 100px;
+          border-top: 5px solid red;
+        }
+        ::-webkit-scrollbar {
+          width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+          background-color: #0a192f;
+        }
+        ::-webkit-scrollbar-thumb {
+          background-color: #495670;
+          border-radius: 4px;
+        }
       }
     </style>
   </head>
@@ -95,7 +146,7 @@
             <a class="nav-link" href="#">TV Shows</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">TV Episodes</a>
+            <a class="nav-link" href="#">Anime</a>
           </li>
         </ul>
         <form class="form-inline mt-2 mt-md-0">
@@ -118,7 +169,7 @@
             <div class="embed-responsive embed-responsive-16by9">
               <iframe
                 class="embed-responsive-item"
-                src="https://www.youtube.com/embed/RlOB3UALvrQ"
+                src="https://www.youtube.com/embed/ZlNFpri-Y40"
               ></iframe>
             </div>
           </div>
@@ -127,13 +178,16 @@
           <div class="card-body">
             <div class="row">
               <div class="col-sm-3">
-                <img src="https://cdn.marvel.com/content/1x/antmanandthewaspquantumania_lob_crd_03.jpg" class="img-fluid" />
+                <img
+                  src="https://cdn.marvel.com/content/1x/antmanandthewaspquantumania_lob_crd_03.jpg"
+                  class="img-fluid"
+                />
               </div>
               <div class="col-sm-9">
                 <h4>Ant-Man: Quantumania</h4>
                 <p class="mt-3 pt-0 pb-0 font-weight-bold">February 17, 2023</p>
                 <p class="mt-0 pt-0 mb-0 pb-0 font-weight-bold">
-                  Rated: 5.1 of 10 with 5,827 votes.
+                  Rated: 6.4/10 - 89K
                 </p>
                 <p class="text-justify font-weight-light">
                   In the film, which officially kicks off phase 5 of the Marvel
@@ -157,9 +211,7 @@
                 src="https://cdn.marvel.com/content/1x/010ant_ons_crd_05.jpg"
                 class="img-fluid"
               />
-              <div
-                class="card-footer bg-light text-dark text-center font-weight-bold"
-              >
+              <div class="card-footer text-center font-weight-bold">
                 Ant-Man
               </div>
             </div>
@@ -170,23 +222,8 @@
                 src="https://cdn.marvel.com/content/1x/321whv_ons_crd_02.jpg"
                 class="img-fluid"
               />
-              <div
-                class="card-footer bg-light text-dark text-center font-weight-bold"
-              >
+              <div class="card-footer text-center font-weight-bold">
                 The Wasp
-              </div>
-            </div>
-          </div>
-          <div class="col-4 col-lg-2">
-            <div class="card text-white mt-4">
-              <img
-                src="https://cdn.marvel.com/content/1x/041wjd_ons_crd_02.jpg"
-                class="img-fluid"
-              />
-              <div
-                class="card-footer bg-light text-dark text-center font-weight-bold"
-              >
-                Janet Van Dyne
               </div>
             </div>
           </div>
@@ -196,9 +233,7 @@
                 src="https://cdn.marvel.com/content/1x/157hap_ons_crd_02.jpg"
                 class="img-fluid"
               />
-              <div
-                class="card-footer bg-light text-dark text-center font-weight-bold"
-              >
+              <div class="card-footer text-center font-weight-bold">
                 Hank Pym
               </div>
             </div>
@@ -206,13 +241,11 @@
           <div class="col-4 col-lg-2">
             <div class="card text-white mt-4">
               <img
-                src="https://cdn.marvel.com/content/1x/317scl_ons_crd_02.jpg"
+                src="https://cdn.marvel.com/content/1x/041wjd_ons_crd_02.jpg"
                 class="img-fluid"
               />
-              <div
-                class="card-footer bg-light text-dark text-center font-weight-bold"
-              >
-                Cassie Lang
+              <div class="card-footer text-center font-weight-bold">
+                Janet Van Dyne
               </div>
             </div>
           </div>
@@ -222,10 +255,19 @@
                 src="https://cdn.marvel.com/content/1x/301kng_ons_crd_01.jpg"
                 class="img-fluid"
               />
-              <div
-                class="card-footer bg-light text-dark text-center font-weight-bold"
-              >
-                The Conqueror
+              <div class="card-footer text-center font-weight-bold">
+                Kang The Conqueror
+              </div>
+            </div>
+          </div>
+          <div class="col-4 col-lg-2">
+            <div class="card text-white mt-4">
+              <img
+                src="https://cdn.marvel.com/content/1x/317scl_ons_crd_02.jpg"
+                class="img-fluid"
+              />
+              <div class="card-footer text-center font-weight-bold">
+                Cassie Lang
               </div>
             </div>
           </div>
@@ -240,6 +282,5 @@ Placed at the end of the document so the pages load faster
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/navbar-control.js"></script>
   </body>
 </html>
