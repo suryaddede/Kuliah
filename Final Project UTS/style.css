@@ -2,6 +2,10 @@ body {
   overflow-x: hidden;
 }
 
+.container {
+  overflow: hidden;
+}
+
 .bg-darkgrey {
   background-color: #202020;
 }
@@ -68,12 +72,6 @@ body {
   line-height: 1;
 }
 
-@media screen and (min-width: 768px) {
-  .headline .card-img {
-    padding: 0 0 0 40px;
-  }
-}
-
 .card-title u {
   text-decoration-color: white;
   border-bottom: 3px solid #ffc934;
@@ -83,7 +81,6 @@ body {
 }
 
 .card-title {
-  margin-left: 20px;
   font-weight: bold;
 }
 
@@ -100,8 +97,8 @@ body {
 }
 
 .trending-image img {
-  height: 108px;
-  width: 108px;
+  height: 94px;
+  width: 94px;
   object-fit: cover;
 }
 
