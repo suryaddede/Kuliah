@@ -434,7 +434,7 @@
         $no_telp = $_POST['no_telp'];
         $email = $_POST['email'];
         $penerima_kps = $_POST['penerima_kps'];
-        if(isset($_POST['no_kps'])) {
+        if (isset($_POST['no_kps'])) {
             $no_kps = $_POST['no_kps'];
         } else {
             $no_kps = '';
@@ -458,7 +458,7 @@
         VALUES ('$jenis_pendaftaran', '$tanggal_masuk', '$nis', '$nomor_peserta', '$pernah_paud', '$pernah_tk', '$no_skhun', '$no_ijazah', '$hobi', '$cita_cita', '$nama', '$jenis_kelamin', '$nisn', '$nik', '$tempat_lahir', '$tanggal_lahir', '$agama', '$berkebutuhan_khusus', '$alamat', '$rt', '$rw', '$dusun', '$desa', '$kecamatan', '$kode_pos', '$tempat_tinggal', '$transportasi', '$no_hp', '$no_telp', '$email', '$penerima_kps', '$no_kps', '$kewarganegaraan', '$nama_ayah', '$tahun_lahir_ayah', '$pendidikan_ayah', '$pekerjaan_ayah', '$penghasilan_ayah', '$berkebutuhan_khusus_ayah', '$nama_ibu', '$tahun_lahir_ibu', '$pendidikan_ibu', '$pekerjaan_ibu', '$penghasilan_ibu', '$berkebutuhan_khusus_ibu');";
 
         if (mysqli_query($conn, $sql)) {
-            echo "<marquee>Data berhasil disimpan</marquee>";
+            header("Location: http://localhost/tugas/Pertemuan%209/reportexcel/reportppdb.php");
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }
