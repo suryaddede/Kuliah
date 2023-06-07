@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<Schema name="dwsakila">
+<!--
+  == This software is subject to the terms of the Eclipse Public License v1.0
+  == Agreement, available at the following URL:
+  == http://www.eclipse.org/legal/epl-v10.html.
+  == You must accept the terms of that agreement to use this software.
+  ==
+  == Copyright (C) 2000-2005 Julian Hyde
+  == Copyright (C) 2005-2011 Pentaho and others
+  == All Rights Reserved.
+  -->
+
+<!-- Shared dimensions -->
+
+  
+
+<!-- Sales -->
+<Cube name="Jual" defaultMeasure="Amount">
+  <!-- Use annotations to provide translations of this cube's caption and
+       description into German and French. Use of annotations in this manner is
+       experimental and unsupported; just for testing right now. -->
+  
+  <Table name="fakta_pendapatan"/>
+
+    
+  <Dimension name="Store" foreignKey ="store_id">
+      <Hierarchy hasAll="true" allMemberName="All Stores" primaryKey ="store_id">
+      <Table name="store"/>
+      <Level name="Store" column="nama_kota"/>
+      </Hierarchy>
+      
+  </Dimension>
+
+ 
+  <Dimension name="Time" foreignKey="time_id">
+    <Hierarchy hasAll="true" allMemberName="All Times" primaryKey="time_id">
+      <Table name="time" />
+      <Level name="Year" column="tahun" type="Numeric" uniqueMembers="true"
+          levelType="TimeYears"/>
+      <Level name="Month" column="bulan" uniqueMembers="false" type="Numeric"
+          levelType="TimeMonths"/>
+      <Level name="Date" column="tanggal" uniqueMembers="false" type="Numeric"
+          levelType="TimeDays"/>
+    </Hierarchy>
+   
+  </Dimension>
+
+  <Dimension name="Film" foreignKey = "film_id">
+    <Hierarchy hasAll="true" allMemberName="All Films" primaryKey ="film_id">
+      <Table name="film" />
+      <Level name="Category" column="kategori"/>
+      <Level name="Title" column="judul" />
+    </Hierarchy>
+  </Dimension>
+
+  <Dimension name="Customer" foreignKey="customer_id">
+    
+    <Hierarchy  hasAll  ="true" allMemberName="All Customers" primaryKey  = "customer_id">
+        <Table name="customer"/>
+        <Level name="Nama" column="nama"/>
+    </Hierarchy>
+  </Dimension>
+    
+  
+
+  <Measure name="Amount" column="amount" aggregator="sum"
+      formatString="Standard"/>
+  <Measure name="Lama Pinjam" column="lamapinjam" aggregator="avg"
+      formatString="Standard"/>
+  
+  <Measure name="Sales Count" column="film_id" aggregator="count"
+      formatString="#,###"/>
+  <Measure name="Customer Count" column="customer_id"
+      aggregator="distinct-count" formatString="#,###"/>
+  
+  
+  
+</Cube>
+
+
+
+</Schema>

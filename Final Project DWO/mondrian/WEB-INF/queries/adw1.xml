@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<Schema name="adventureworksdw">
+  <!--
+  == This software is subject to the terms of the Eclipse Public License v1.0
+  == Agreement, available at the following URL:
+  == http://www.eclipse.org/legal/epl-v10.html.
+  == You must accept the terms of that agreement to use this software.
+  ==
+  == Copyright (C) 2000-2005 Julian Hyde
+  == Copyright (C) 2005-2011 Pentaho and others
+  == All Rights Reserved.
+  -->
+
+  <!-- Shared dimensions -->
+
+
+  <!-- Sales -->
+  <Cube name="Sales" defaultMeasure="total_sales">
+    <Table name="SalesFact">
+    </Table>
+    <Dimension name="Time" foreignKey="time_id">
+      <Hierarchy hasAll="true" primaryKey="time_id">
+        <Table name="TimeDimension">
+        </Table>
+        <Level name="Year" column="year" uniqueMembers="false">
+        </Level>
+        <Level name="Quarter" column="quarter" uniqueMembers="false">
+        </Level>
+        <Level name="Month" column="month" uniqueMembers="false">
+        </Level>
+        <Level name="Date" column="date" uniqueMembers="true">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Product" foreignKey="product_id">
+      <Hierarchy hasAll="true" primaryKey="product_id">
+        <Table name="ProductDimension">
+        </Table>
+        <Level name="Category" column="category" uniqueMembers="false">
+        </Level>
+        <Level name="Subcategory" column="subcategory" uniqueMembers="false">
+        </Level>
+        <Level name="Product Name" column="product_name" uniqueMembers="true">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Location" foreignKey="location_id">
+      <Hierarchy hasAll="true" primaryKey="location_id">
+        <Table name="LocationDimension">
+        </Table>
+        <Level name="Country" column="country" uniqueMembers="false">
+        </Level>
+        <Level name="State/Province" column="state_province" uniqueMembers="false">
+        </Level>
+        <Level name="City" column="city" uniqueMembers="false">
+        </Level>
+        <Level name="Address" column="address" uniqueMembers="true">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Measure name="Quantity Sold" column="quantity_sold" aggregator="sum">
+    </Measure>
+    <Measure name="Total Sales" column="total_sales" aggregator="sum">
+    </Measure>
+  </Cube>
+
+
+</Schema>
